@@ -1,6 +1,6 @@
-package view;
+package menus;
 
-import models.Library;
+import materials.Library;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -30,26 +30,27 @@ public class Menu {
         while (isInitialized){
             System.out.print(OPTIONS);
             switch(userInput()){
-                case 1:
+                case "1":
                     System.out.print("\nSelect a material to add:\n" + MATERIALS_OPTIONS);
                     LIBRARY.addMaterial(userInput());
                     break;
-                case 2:
+                case "2":
                     System.out.print("\nSelect a material to list:\n" + MATERIALS_OPTIONS);
                     LIBRARY.listMaterial(userInput());
                     break;
-                case 3:
-                    System.out.println("3");
+                case "3":
+                    System.out.print("\nSelect a material to Search:\n" + MATERIALS_OPTIONS);
+                    LIBRARY.searchMaterial(userInput());
                     break;
-                case 4:
+                case "4":
                     System.out.print("\nSelect a material to delete:\n" + MATERIALS_OPTIONS);
                     LIBRARY.deleteMaterial(userInput());
                     break;
-                case 5:
+                case "5":
                     System.out.print("\nSelect a material to update:\n" + MATERIALS_OPTIONS);
                     LIBRARY.updateMaterial(userInput());
                     break;
-                case 6:
+                case "6":
                     exitMenu();
                     break;
                 default:
@@ -68,11 +69,11 @@ public class Menu {
         isInitialized = Boolean.FALSE;
     }
 
-    private static Integer userInput(){
+    private static String userInput(){
         try {
-            return new Scanner(System.in).nextInt();
+            return new Scanner(System.in).nextLine();
         } catch (InputMismatchException error){
-            return -1;
+            return "";
         }
     }
 

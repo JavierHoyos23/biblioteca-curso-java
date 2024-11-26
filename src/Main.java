@@ -1,4 +1,4 @@
-import view.Menu;
+import menus.Menu;
 
 public class Main {
 

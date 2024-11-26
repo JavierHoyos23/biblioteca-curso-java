@@ -1,4 +1,4 @@
-package models;
+package materials;
 
 import java.util.Scanner;
 
@@ -22,6 +22,17 @@ public abstract class Material {
      }
 
     public abstract void getMaterialInfo();
+
+    public void updateInformation(){
+        System.out.print("Title: ");
+        this.setTitle(userInput.nextLine());
+        System.out.print("Author: ");
+        this.setAuthor(userInput.nextLine());
+        System.out.print("Released Date: ");
+        this.setReleasedDate(userInput.nextLine());
+        System.out.print("Category: ");
+        this.setCategory(userInput.nextLine());
+    }
 
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
